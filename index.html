@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notice | Home</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <section class="header">
+        <nav>
+            <a href="index.html"><img src="newNoticeLogo.png"></a>
+            <div class="nav-links" id="navLinks">
+                <i class="fa fa-times" onclick="hideMenu()"></i>
+                <ul>
+                    <li><a href="index.html">HOME</a></li>
+
+                    <li><a href="index.html">ABOUT</a></li>
+                    <li><a class="blockLink" href="index.html">JOIN OUR COMMUNITY</a></li>
+                </ul>
+            </div>
+            <i class="fa fa-bars" onclick="showMenu()"></i>
+        </nav>
+        <section class="contact" id="contact">
+
+            <form onsubmit="sendEmail(); reset(); return false;" class="contactForm">
+                <div class="title white">
+                    <h2 class="titleText">NON-PROFIT APPLICATION</h2>
+                    <p>Apply to join the Notice community! We ask that non-profit organizations interested in using our
+                        networking service fill out the following application to ensure the safety of all of our
+                        volunteers.
+                    </p>
+                </div>
+                <label>Organization Name:</label><br>
+                <div class="inputBox">
+                    <input id="orgName" ype="text" placeholder="">
+                </div>
+                <!-- <div class="inputBox">
+                    <input type="text" placeholder="Email">
+                </div> -->
+                <div class="fileStyle">
+                    <label>Please attach your organization's PC form:</label><br>
+                    <div class="inputFile">
+                        <input id="pcForm" type="file">
+                    </div>
+                </div>
+
+                <label>Mission statement (abridged):</label><br>
+                <div class="inputBox">
+                    <textarea id="q1" placeholder=""></textarea>
+                </div>
+
+                <label>How does your organization positively impact your community?:</label><br>
+                <div class="inputBox">
+                    <textarea id="q2" placeholder=""></textarea>
+                </div>
+                <label>Please list any website URLs and/or social media usernames if applicable:</label><br>
+                <div class="inputBox">
+                    <textarea id="q3" placeholder=""></textarea>
+                </div>
+                <label>What are some kinds of volunteer work your organization needs?:</label><br>
+                <div class="inputBox">
+                    <textarea id="q4" placeholder=""></textarea>
+                </div>
+                <label>Why Notice? In what ways do you believe Notice’s service will benefit your
+                    organization?:</label><br>
+                <div class="inputBox">
+                    <textarea id="q5" placeholder=""></textarea>
+                </div>
+                <label>Additional Information (optional):</label><br>
+                <div class="inputBox">
+                    <textarea id="q6" placeholder=""></textarea>
+                </div>
+                <div class="send">
+                    <input id="send" type="Submit" value="Apply">
+                </div>
+            </form>
+            <div class="divider"></div>
+        </section>
+    </section>
+
+    <script type="text/javascript">
+
+        var navLinks = document.getElementById("navLinks");
+
+        function showMenu() {
+            navLinks.style.right = "0";
+        }
+        function hideMenu() {
+            navLinks.style.right = "-200px";
+        }
+    </script>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script>
+        function sendEmail() {
+            Email.send({
+                Host: "smtp.gmail.com",
+                Username: "Manasa",
+                Password: "password",
+                To: 'them@website.com',
+                From: "you@isp.com",
+                Subject: "This is the subject",
+                Body: "And this is the body"
+            }).then(
+                message => alert(message)
+            );
+        }
+    </script>
+</body>
+
+</html>
